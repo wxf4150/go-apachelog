@@ -1,4 +1,8 @@
 # apachelog
+after fork  i add the this feature:
+* record position of logFile when scan.
+* when log-line not match,  the line-content append to err's msg.
+
 
 [![GoDoc](https://godoc.org/github.com/e-XpertSolutions/go-apachelog/apachelog?status.png)](http://godoc.org/github.com/e-XpertSolutions/go-apachelog/apachelog)
 [![License](https://img.shields.io/badge/license-BSD%203--Clause-yellow.svg?style=flat)](https://github.com/e-XpertSolutions/go-apachelog/blob/master/LICENSE)
@@ -16,7 +20,7 @@ newer to compile.
 To install the latest version of `apachelog`, issue the following command:
 
 ```
-go get -u github.com/e-XpertSolutions/go-apachelog/apachelog
+go get -u github.com/wxf4150/go-apachelog/apachelog
 ```
 
 

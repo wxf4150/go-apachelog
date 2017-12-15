@@ -79,6 +79,7 @@ func makeStateFn(expr []string) (stateFn, error) {
 
 // A Parser for parsing Apaache access log files.
 type Parser struct {
+	Pos int64
 	br *bufio.Reader
 	fn stateFn
 }
@@ -125,12 +126,14 @@ func (p *Parser) Parse() (*AccessLogEntry, error) {
 	if err != nil {
 		return nil, err
 	}
+	p.Pos +=int64(len(line))
 	entry := AccessLogEntry{
 		Cookies: make(map[string]string),
 		Headers: make(map[string]string),
 		EnvVars: make(map[string]string),
 	}
 	if err := p.fn(&entry, line, 0); err != nil {
+		err=errors.New(err.Error()+" err-line:"+line)
 		return nil, err
 	}
 	return &entry, nil
