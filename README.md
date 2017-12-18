@@ -1,5 +1,5 @@
 # apachelog
-after fork  i add the this feature:
+after fork;  i add the this feature:
 * record position of logFile when scan.
 * when log-line not match,  the line-content append to err's msg.
 
